@@ -1,0 +1,22 @@
+name: dressco-ci
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Витрина және құжаттарды тексеру
+        run: python scripts/ci_check.py
+      - name: Қаржы моделі
+        run: python scripts/financial_model.py
+      - name: Монте-Карло қайта орындалады
+        run: python scripts/monte_carlo.py
+      - name: DORA есебі
+        run: python scripts/dora_metrics.py
