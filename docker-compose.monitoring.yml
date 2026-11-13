@@ -1,0 +1,28 @@
+# DressCo демо-стенді: статикалық витрина және Uptime Kuma.
+# Көтеру: docker compose -f docker-compose.monitoring.yml up -d
+# Витрина: http://127.0.0.1:8080/
+# Kuma:    http://127.0.0.1:3001/
+# Монитор UI-да бір рет қосылады: HTTP, http://storefront/ , аралық 60 секунд.
+# Екінші монитор (төлем) R3-ке дейін қосылмайды: шлюз жоқ, жасыл «жоқ қызмет» болмауы керек.
+
+services:
+  storefront:
+    image: nginx:1.27-alpine
+    volumes:
+      - ./anon-ecommerce-website-master:/usr/share/nginx/html:ro
+    ports:
+      - "8080:80"
+    restart: unless-stopped
+
+  uptime-kuma:
+    image: louislam/uptime-kuma:1
+    depends_on:
+      - storefront
+    ports:
+      - "3001:3001"
+    volumes:
+      - uptime-kuma:/app/data
+    restart: unless-stopped
+
+volumes:
+  uptime-kuma:
