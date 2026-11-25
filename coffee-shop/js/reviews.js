@@ -14,19 +14,22 @@ const reviewsModule = {
                     reviewerName: 'Айгүл М.',
                     date: new Date(2023, 8, 15).toISOString(),
                     reviewText: 'Біздің отбасылық мереке үшін үстел брондадық. Әдемі атмосфера, дәмді тағамдар және керемет қызмет! Барлығы өте таза және жайлы. Ұсынылады!',
-                    rating: 5
+                    rating: 5,
+                    isSample: true
                 },
                 {
                     reviewerName: 'Нұрлан К.',
                     date: new Date(2023, 9, 22).toISOString(),
                     reviewText: 'Корпоративтік кеш өткіздік. Персонал өте мейірімді және көмекші. Тағамдар дәмді, порциялар үлкен. Біз қуанышты болдық!',
-                    rating: 5
+                    rating: 5,
+                    isSample: true
                 },
                 {
                     reviewerName: 'Марат С.',
                     date: new Date(2023, 10, 5).toISOString(),
                     reviewText: 'Бірнеше жыл бойы бұл ресторанға келеміз. Сапасы тұрақты, бағасы ақылға сыйымды. Ең сүйікті жеріміз!',
-                    rating: 5
+                    rating: 5,
+                    isSample: true
                 }
             ];
             sampleReviews.forEach(review => {
@@ -40,8 +43,9 @@ const reviewsModule = {
             <div class="reviews-page">
                 <div class="reviews-header">
                     <h2 class="reviews-title">КЛИЕНТТЕР БІЗ ТУРАЛЫ</h2>
-                    ${reviewTriage.staffCanSee() ? '<p class="review-triage-note">Менеджерге арналған бағдар: кілтсөз тізімі. Модель қосылмаған, қонаққа жауап өзі бармайды.</p>' : ''}
+                    <button class="btn btn-success" onclick="reviewsModule.showReviewForm()">Пікір қалдыру</button>
                 </div>
+                ${typeof aiAssistant !== "undefined" ? aiAssistant.panel(reviews) : ""}
                 
                 <div class="reviews-carousel-container">
                     <button class="reviews-nav-btn reviews-nav-prev" onclick="reviewsModule.prevReviews()" id="prevBtn">
@@ -115,7 +119,7 @@ const reviewsModule = {
                             ${'⭐'.repeat(review.rating || 5)}
                         </div>
                         <div class="review-card-text">${displayText}</div>
-                        ${reviewTriage.badge(shortText)}
+                        ${typeof aiAssistant !== "undefined" ? aiAssistant.card(review) : ""}
                         ${isLong ? `<a href="#" class="review-read-more" onclick="reviewsModule.readFullReview(${review.id || startIndex + index}); return false;">толығырақ оқу</a>` : ''}
                     </div>
                 </div>
@@ -213,7 +217,7 @@ const reviewsModule = {
                             </div>
                         </div>
                         <div class="all-review-text">${review.reviewText || review.text || ''}</div>
-                        ${reviewTriage.badge(review.reviewText || review.text || '')}
+                        ${typeof aiAssistant !== "undefined" ? aiAssistant.card(review) : ""}
                     </div>
                 `;
             }).join('');
@@ -234,7 +238,7 @@ const reviewsModule = {
                 <form onsubmit="reviewsModule.submitReview(event)">
                     <div class="form-group">
                         <label>Аты-жөні:</label>
-                        <input type="text" id="reviewName" required>
+                        <input type="text" id="reviewName" required value="${auth && auth.currentUser && auth.currentUser.role === 'guest' ? 'Қонақ' : ''}">
                     </div>
                     <div class="form-group">
                         <label>Бағалау:</label>
@@ -266,20 +270,27 @@ const reviewsModule = {
         const name = storage.sanitizeInput(document.getElementById('reviewName').value);
         const rating = parseInt(document.getElementById('reviewRating').value);
         const text = storage.sanitizeInput(document.getElementById('reviewText').value);
+        if (!name || !text || !rating) return;
 
         const review = storage.create('reviews', {
             reviewerName: name,
             rating,
             reviewText: text,
-            createdAt: new Date().toISOString()
+            createdAt: new Date().toISOString(),
+            isSample: false
         });
 
-        if (auth && auth.showNotification) {
-            auth.showNotification('Пікір сәтті қалдырылды!', 'success');
-        }
         document.querySelector('.modal').remove();
-        this.currentIndex = 0;
-        this.render();
+        const total = (storage.read('reviews') || []).length;
+        this.currentIndex = Math.floor(Math.max(0, total - 1) / this.reviewsPerPage) * this.reviewsPerPage;
+        if (auth && auth.showNotification) {
+            auth.showNotification('Пікір сақталды. Автоматты оқу басталды.', 'success');
+        }
+        if (typeof aiAssistant !== "undefined") {
+            aiAssistant.analyzeOne(review.id);
+        } else {
+            this.render();
+        }
     }
 };
 

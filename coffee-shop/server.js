@@ -2,7 +2,8 @@ const http = require('http');
 const fs = require('fs');
 const path = require('path');
 
-const PORT = 8080;
+const PORT = Number(process.env.PORT) || 8080;
+const { analyzeText, health } = require("./ai/engine");
 const ROOT = __dirname;
 
 const MIME = {
@@ -23,8 +24,52 @@ function keepAlive(message) {
     setInterval(() => {}, 1 << 30);
 }
 
-const server = http.createServer((req, res) => {
+function sendJson(res, status, body) {
+    const data = JSON.stringify(body);
+    res.writeHead(status, {
+        'Content-Type': 'application/json; charset=utf-8',
+        'Content-Length': Buffer.byteLength(data)
+    });
+    res.end(data);
+}
+
+function readBody(req) {
+    return new Promise((resolve, reject) => {
+        const chunks = [];
+        req.on('data', (chunk) => chunks.push(chunk));
+        req.on('end', () => {
+            const raw = Buffer.concat(chunks).toString('utf8');
+            if (!raw) return resolve({});
+            try {
+                resolve(JSON.parse(raw));
+            } catch (error) {
+                reject(error);
+            }
+        });
+        req.on('error', reject);
+    });
+}
+
+const server = http.createServer(async (req, res) => {
     let urlPath = decodeURIComponent((req.url || '/').split('?')[0]);
+    if (urlPath === '/api/ai/health') {
+        sendJson(res, 200, await health());
+        return;
+    }
+    if (urlPath === '/api/ai/analyze' && req.method === 'POST') {
+        try {
+            const body = await readBody(req);
+            const text = String(body.text || '').trim();
+            if (!text) {
+                sendJson(res, 400, { ok: false, error: 'Пікір мәтіні бос' });
+                return;
+            }
+            sendJson(res, 200, await analyzeText(text));
+        } catch (error) {
+            sendJson(res, 400, { ok: false, error: 'Сұраныс JSON емес' });
+        }
+        return;
+    }
     if (urlPath === '/') urlPath = '/index.html';
 
     const filePath = path.normalize(path.join(ROOT, urlPath));

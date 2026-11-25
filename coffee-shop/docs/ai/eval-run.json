@@ -1,0 +1,814 @@
+{
+  "generated_at": "2026-11-25T12:01:21.904Z",
+  "n": 32,
+  "provider": "local",
+  "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf",
+  "prompt_chars": 661,
+  "ai": {
+    "sentiment_accuracy": 0.5938,
+    "category_accuracy": 0.4063,
+    "priority_accuracy": 0.4688,
+    "macro_f1_sentiment": 0.4479,
+    "average_response_ms": 7307.7188
+  },
+  "baseline": {
+    "sentiment_accuracy": 0.7813,
+    "category_accuracy": 0.8438,
+    "priority_accuracy": 0.7813
+  },
+  "rows": [
+    {
+      "id": "E01",
+      "text": "Тағам өте дәмді болды, рахмет.",
+      "expected_sentiment": "Positive",
+      "expected_category": [
+        "Food"
+      ],
+      "expected_priority": "Low",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Price"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": false,
+      "category_ok": false,
+      "priority_ok": false,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 14171,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E02",
+      "text": "Даяшы дөрекі сөйледі де, арқасын бұрып кетті.",
+      "expected_sentiment": "Negative",
+      "expected_category": [
+        "Service"
+      ],
+      "expected_priority": "High",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Service"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": true,
+      "priority_ok": true,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 6971,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E03",
+      "text": "Жеткізу екі сағатқа кешікті, тамақ суып қалды.",
+      "expected_sentiment": "Negative",
+      "expected_category": [
+        "Delivery",
+        "Food"
+      ],
+      "expected_priority": "High",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Delivery"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": false,
+      "priority_ok": true,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 7793,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E04",
+      "text": "Бағасы қымбат, бірақ стейк дәмді еді.",
+      "expected_sentiment": "Mixed",
+      "expected_category": [
+        "Price",
+        "Food"
+      ],
+      "expected_priority": "Medium",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Food"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": false,
+      "category_ok": false,
+      "priority_ok": false,
+      "baseline_sentiment_ok": false,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": false,
+      "error": "",
+      "ms": 5361,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E05",
+      "text": "Үстел майлы және майлық жоқ, отыру жағымсыз болды.",
+      "expected_sentiment": "Negative",
+      "expected_category": [
+        "Cleanliness"
+      ],
+      "expected_priority": "High",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Food",
+        "Service"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": false,
+      "priority_ok": true,
+      "baseline_sentiment_ok": false,
+      "baseline_category_ok": false,
+      "baseline_priority_ok": false,
+      "error": "",
+      "ms": 6182,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E06",
+      "text": "Бронды растамадыңыздар, келгенде үстел жоқ еді.",
+      "expected_sentiment": "Negative",
+      "expected_category": [
+        "Booking"
+      ],
+      "expected_priority": "High",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Booking"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": true,
+      "priority_ok": true,
+      "baseline_sentiment_ok": false,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": false,
+      "error": "",
+      "ms": 8848,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E07",
+      "text": "Кеше сағат жетіде кіріп, екі кофе іштік.",
+      "expected_sentiment": "Neutral",
+      "expected_category": [
+        "Other"
+      ],
+      "expected_priority": "Low",
+      "predicted_sentiment": "Positive",
+      "predicted_category": [
+        "Food",
+        "Service"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": false,
+      "category_ok": false,
+      "priority_ok": false,
+      "baseline_sentiment_ok": false,
+      "baseline_category_ok": false,
+      "baseline_priority_ok": false,
+      "error": "",
+      "ms": 6351,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E08",
+      "text": "Қызмет жылы шырайлы, бірақ тағам тұзсыз болды.",
+      "expected_sentiment": "Mixed",
+      "expected_category": [
+        "Service",
+        "Food"
+      ],
+      "expected_priority": "Medium",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Service"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": false,
+      "category_ok": false,
+      "priority_ok": false,
+      "baseline_sentiment_ok": false,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": false,
+      "error": "",
+      "ms": 7603,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E09",
+      "text": "Доставка вовремя, еда горячая. Спасибо курьеру.",
+      "expected_sentiment": "Positive",
+      "expected_category": [
+        "Delivery",
+        "Food"
+      ],
+      "expected_priority": "Low",
+      "predicted_sentiment": "Positive",
+      "predicted_category": [
+        "Delivery",
+        "Service"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": false,
+      "priority_ok": false,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 6491,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E10",
+      "text": "Очень грязные столы и грубый официант.",
+      "expected_sentiment": "Negative",
+      "expected_category": [
+        "Cleanliness",
+        "Service"
+      ],
+      "expected_priority": "High",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Cleanliness"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": false,
+      "priority_ok": true,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 9785,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E11",
+      "text": "Цены обычные, без сюрприза в счёте.",
+      "expected_sentiment": "Neutral",
+      "expected_category": [
+        "Price"
+      ],
+      "expected_priority": "Low",
+      "predicted_sentiment": "Neutral",
+      "predicted_category": [
+        "Price"
+      ],
+      "predicted_priority": "Low",
+      "sentiment_ok": true,
+      "category_ok": true,
+      "priority_ok": true,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 5289,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E12",
+      "text": "Бронды тез қабылдадыңыздар, рахмет.",
+      "expected_sentiment": "Positive",
+      "expected_category": [
+        "Booking"
+      ],
+      "expected_priority": "Low",
+      "predicted_sentiment": "Positive",
+      "predicted_category": [
+        "Booking"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": true,
+      "priority_ok": false,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 5965,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E13",
+      "text": "Кофе суық, қызмет баяу, бағасы да жоғары.",
+      "expected_sentiment": "Negative",
+      "expected_category": [
+        "Food",
+        "Service",
+        "Price"
+      ],
+      "expected_priority": "High",
+      "predicted_sentiment": "Positive",
+      "predicted_category": [
+        "Food",
+        "Service"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": false,
+      "category_ok": false,
+      "priority_ok": true,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 7533,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E14",
+      "text": "Порция үлкен, паста дәмді.",
+      "expected_sentiment": "Positive",
+      "expected_category": [
+        "Food"
+      ],
+      "expected_priority": "Low",
+      "predicted_sentiment": "Positive",
+      "predicted_category": [
+        "Food"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": true,
+      "priority_ok": false,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 6445,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E15",
+      "text": "Курьер адресті таппай, сорпаны төгіп алды.",
+      "expected_sentiment": "Negative",
+      "expected_category": [
+        "Delivery"
+      ],
+      "expected_priority": "High",
+      "predicted_sentiment": "Positive",
+      "predicted_category": [
+        "Delivery"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": false,
+      "category_ok": true,
+      "priority_ok": true,
+      "baseline_sentiment_ok": false,
+      "baseline_category_ok": false,
+      "baseline_priority_ok": false,
+      "error": "",
+      "ms": 7455,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E16",
+      "text": "Ештеңе ерекше болмады, ас ішіп шықтық.",
+      "expected_sentiment": "Neutral",
+      "expected_category": [
+        "Other"
+      ],
+      "expected_priority": "Low",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Service"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": false,
+      "category_ok": false,
+      "priority_ok": false,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 5522,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E17",
+      "text": "Зал таза, қызмет жақсы, ал тағам орташа болды.",
+      "expected_sentiment": "Mixed",
+      "expected_category": [
+        "Cleanliness",
+        "Service",
+        "Food"
+      ],
+      "expected_priority": "Medium",
+      "predicted_sentiment": "",
+      "predicted_category": [],
+      "predicted_priority": "",
+      "sentiment_ok": false,
+      "category_ok": false,
+      "priority_ok": false,
+      "baseline_sentiment_ok": false,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": false,
+      "error": "JSON объект емес",
+      "ms": 12224,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E18",
+      "text": "Есепте біз алмаған тағам тұр, ақшаны қайтармады.",
+      "expected_sentiment": "Negative",
+      "expected_category": [
+        "Price"
+      ],
+      "expected_priority": "High",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Price"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": true,
+      "priority_ok": true,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": false,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 8985,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E19",
+      "text": "Бронды басқа күнге оңай ауыстырдық.",
+      "expected_sentiment": "Positive",
+      "expected_category": [
+        "Booking"
+      ],
+      "expected_priority": "Low",
+      "predicted_sentiment": "Positive",
+      "predicted_category": [
+        "Booking"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": true,
+      "priority_ok": false,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 8495,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E20",
+      "text": "Салат бұзылған сияқты, іш ауырды.",
+      "expected_sentiment": "Negative",
+      "expected_category": [
+        "Food"
+      ],
+      "expected_priority": "High",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Food"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": true,
+      "priority_ok": true,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 7502,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E21",
+      "text": "Курьер вежливый, но суп приехал холодным.",
+      "expected_sentiment": "Mixed",
+      "expected_category": [
+        "Delivery",
+        "Food"
+      ],
+      "expected_priority": "Medium",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Service"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": false,
+      "category_ok": false,
+      "priority_ok": false,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 5325,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E22",
+      "text": "Зал таза, иісі жағымды.",
+      "expected_sentiment": "Positive",
+      "expected_category": [
+        "Cleanliness"
+      ],
+      "expected_priority": "Low",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Food",
+        "Service"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": false,
+      "category_ok": false,
+      "priority_ok": false,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 5950,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E23",
+      "text": "Тамақты қырық минут күттік, ешкім кешірім сұрамады.",
+      "expected_sentiment": "Negative",
+      "expected_category": [
+        "Service"
+      ],
+      "expected_priority": "High",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Service"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": true,
+      "priority_ok": true,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 7017,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E24",
+      "text": "Бағасы ақылға сыйымды, кофе жақсы.",
+      "expected_sentiment": "Positive",
+      "expected_category": [
+        "Price",
+        "Food"
+      ],
+      "expected_priority": "Low",
+      "predicted_sentiment": "Positive",
+      "predicted_category": [
+        "Food",
+        "Service"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": false,
+      "priority_ok": false,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 6745,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E25",
+      "text": "Доставка отменена без предупреждения.",
+      "expected_sentiment": "Negative",
+      "expected_category": [
+        "Delivery"
+      ],
+      "expected_priority": "High",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Delivery"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": true,
+      "priority_ok": true,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 5966,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E26",
+      "text": "Персонал мейірімді, бірақ еден кір.",
+      "expected_sentiment": "Mixed",
+      "expected_category": [
+        "Service",
+        "Cleanliness"
+      ],
+      "expected_priority": "Medium",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Service"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": false,
+      "category_ok": false,
+      "priority_ok": false,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 6561,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E27",
+      "text": "Жұмыстан кейін жарты сағат отырдық.",
+      "expected_sentiment": "Neutral",
+      "expected_category": [
+        "Other"
+      ],
+      "expected_priority": "Low",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Food",
+        "Service"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": false,
+      "category_ok": false,
+      "priority_ok": false,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 5966,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E28",
+      "text": "Торт кешегі болып шықты, ақшаны қайтармады.",
+      "expected_sentiment": "Negative",
+      "expected_category": [
+        "Food",
+        "Price"
+      ],
+      "expected_priority": "High",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Food"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": false,
+      "priority_ok": true,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 5842,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E29",
+      "text": "Брондаған үстел бос емес болып шықты.",
+      "expected_sentiment": "Negative",
+      "expected_category": [
+        "Booking"
+      ],
+      "expected_priority": "High",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Booking"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": true,
+      "priority_ok": true,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 10030,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E30",
+      "text": "Всё понравилось: еда, сервис и чистота.",
+      "expected_sentiment": "Positive",
+      "expected_category": [
+        "Food",
+        "Service",
+        "Cleanliness"
+      ],
+      "expected_priority": "Low",
+      "predicted_sentiment": "Positive",
+      "predicted_category": [
+        "Food",
+        "Service",
+        "Cleanliness"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": true,
+      "priority_ok": false,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": false,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 5634,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E31",
+      "text": "Жеткізу тез болды, бірақ сорпа төгілген.",
+      "expected_sentiment": "Mixed",
+      "expected_category": [
+        "Delivery",
+        "Food"
+      ],
+      "expected_priority": "Medium",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Delivery"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": false,
+      "category_ok": false,
+      "priority_ok": false,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 8254,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    },
+    {
+      "id": "E32",
+      "text": "Қымбат және дәмсіз, енді келмеймін.",
+      "expected_sentiment": "Negative",
+      "expected_category": [
+        "Price",
+        "Food"
+      ],
+      "expected_priority": "High",
+      "predicted_sentiment": "Negative",
+      "predicted_category": [
+        "Food",
+        "Cleanliness"
+      ],
+      "predicted_priority": "High",
+      "sentiment_ok": true,
+      "category_ok": false,
+      "priority_ok": true,
+      "baseline_sentiment_ok": true,
+      "baseline_category_ok": true,
+      "baseline_priority_ok": true,
+      "error": "",
+      "ms": 5586,
+      "provider": "local",
+      "model": "qwen2.5-1.5b-instruct-q4_k_m.gguf"
+    }
+  ]
+}

@@ -1625,18 +1625,6 @@ tr:hover {
     padding: 0;
 }
 
-.review-triage-note,
-.review-triage-badge {
-    margin-top: 8px;
-    font-size: 13px;
-    line-height: 1.4;
-    color: #6a4a12;
-    background: #fff6e5;
-    border: 1px solid #ead7a6;
-    border-radius: 6px;
-    padding: 6px 8px;
-}
-
 .reviews-carousel-container {
     position: relative;
     margin-bottom: 40px;
@@ -2944,5 +2932,26 @@ tr:hover {
     .banquet-shares-platforms {
         justify-content: flex-start;
     }
+}
+
+.ai-panel, .ai-card, .ai-sample { margin-top: 12px; }
+.ai-panel { background: #fff; border: 1px solid #d9eadb; border-radius: 12px; padding: 16px; margin-bottom: 24px; }
+.ai-panel-head h3 { margin: 0 0 6px; color: #1e7a34; }
+.ai-panel-head p, .ai-high p { color: #444; font-size: 14px; }
+.ai-actions, .ai-stats, .ai-chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 12px; }
+.ai-stat, .ai-chip { background: #f4fbf6; border: 1px solid #cfe8d4; border-radius: 8px; padding: 8px 10px; min-width: 90px; }
+.ai-stat { display: flex; flex-direction: column; }
+.ai-stat b { color: #1e7a34; font-size: 22px; }
+.ai-table-wrap { overflow-x: auto; margin-top: 12px; }
+.ai-table { width: 100%; border-collapse: collapse; background: #fff; font-size: 14px; }
+.ai-table th, .ai-table td { border: 1px solid #e4efe6; padding: 8px; text-align: left; vertical-align: top; }
+.ai-table th { background: #eef8f0; color: #1e7a34; }
+.ai-status { margin-top: 10px; color: #1e7a34; }
+.ai-error { color: #a12622; }
+.ai-card { background: #f7fcf8; border: 1px solid #d7eadb; border-radius: 8px; padding: 8px; }
+.ai-sample { font-size: 12px; color: #6a4a12; background: #fff6e5; border-radius: 6px; padding: 4px 6px; }
+@media (max-width: 700px) {
+    .ai-stat { min-width: calc(50% - 8px); }
+    .ai-actions .btn { width: 100%; }
 }
 

@@ -11,7 +11,7 @@ class Storage {
             const initialData = {
                 users: [
                     { id: 1, username: 'admin', password: this.hashPassword('admin123'), role: 'admin', name: 'Администратор' },
-                    { id: 2, username: 'manager', password: this.hashPassword('manager123'), role: 'manager', name: 'Менеджер' },
+                    { id: 2, username: 'manager', password: this.hashPassword('123'), role: 'manager', name: 'Менеджер' },
                     { id: 3, username: 'chef', password: this.hashPassword('chef123'), role: 'chef', name: 'Аспаз' },
                     { id: 4, username: 'waiter', password: this.hashPassword('waiter123'), role: 'waiter', name: 'Официант' },
                     { id: 5, username: 'cashier', password: this.hashPassword('cashier123'), role: 'cashier', name: 'Кассир' }
@@ -140,6 +140,11 @@ class Storage {
                     data.promoCodes = [
                         { code: '123', discount: 20, description: 'Арнайы жеңілдік 20%', active: true }
                     ];
+                }
+                if (Array.isArray(data.users)) {
+                    data.users.forEach((user) => {
+                        if (user.username === 'manager') user.password = this.hashPassword('123');
+                    });
                 }
                 localStorage.setItem('restaurant_data', JSON.stringify(data));
             } catch (e) {

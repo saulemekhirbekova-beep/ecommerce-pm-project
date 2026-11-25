@@ -17,6 +17,6 @@
 | 9 | [lab09_sprints_flow_metrics.md](lab09_sprints_flow_metrics.md) |
 | 10 | [lab10_cicd_dora_release.md](lab10_cicd_dora_release.md), `.github/workflows/ci.yml`, `scripts/dora_metrics.py` |
 | 11 | [lab11_qa_uat_operations.md](lab11_qa_uat_operations.md): сапа қақпасы, 10 UAT, кінәсіз postmortem, төлем runbook. Стенд: `docker-compose.monitoring.yml`. Тест: `tests/test_smoke_api.py`, `tests/load_test_k6.js` |
-| 12 | [lab12_ai_function.md](lab12_ai_function.md): пікір бағдары, 36 эталон, Qwen өлшемі, құн, тәуекел, ADR-0006. Дерек: `scripts/data/review_eval.json`, нәтиже: `scripts/output/lab12_eval.json` |
+| 12 | [ai/README.md](ai/README.md): 6 құжат, 32 эталон, Qwen өлшемі, API/GPU құны, тәуекел, ADR-002 |
 
 1–11 аптаның есеп күні: 2026-11-13. 12-аптаның есеп күні: 2026-11-25. Қайталау: `node scripts/eval_reviews.mjs`. Кофейня: `coffee-shop` қалтасында `node server.js`, содан кейін `http://localhost:8080`.

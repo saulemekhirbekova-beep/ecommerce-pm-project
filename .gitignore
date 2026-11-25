@@ -1,4 +1,6 @@
 scripts/node_modules/
 scripts/models/*.gguf
+coffee-shop/node_modules/
+coffee-shop/ai-config.local.json
 __pycache__/
 *.pyc

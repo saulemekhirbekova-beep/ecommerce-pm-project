@@ -1,0 +1,11 @@
+{
+  "provider": "local",
+  "ollamaBaseUrl": "http://127.0.0.1:11434",
+  "ollamaModel": "qwen2.5:1.5b",
+  "temperature": 0,
+  "maxTokens": 320,
+  "modelPaths": [
+    "models/qwen2.5-1.5b-instruct-q4_k_m.gguf",
+    "../scripts/models/qwen2.5-1.5b-instruct-q4_k_m.gguf"
+  ]
+}
