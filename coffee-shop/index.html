@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ресторан басқару жүйесі</title>
+    <link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+    <!-- Авторизация экраны (алғашқы көрсетіледі) -->
+    <div id="loginScreen" class="screen active">
+        <div class="login-container">
+            <h1>Ресторан </h1>
+            <form id="loginForm">
+                <div class="form-group">
+                    <label for="role">Кіру түрі:</label>
+                    <select id="role" required onchange="auth.handleRoleChange()">
+                        <option value="">Таңдаңыз...</option>
+                        <option value="guest">Қонақ ретінде</option>
+                        <option value="admin">Админ</option>
+                        <option value="manager">Менеджер</option>
+                        <option value="chef">Аспаз</option>
+                        <option value="waiter">Официант</option>
+                        <option value="cashier">Кассир</option>
+                    </select>
+                </div>
+                <div id="loginFields">
+                    <div class="form-group">
+                        <label for="username">Логин:</label>
+                        <input type="text" id="username" required>
+                    </div>
+                    <div class="form-group">
+                        <label for="password">Пароль:</label>
+                        <input type="password" id="password" required>
+                    </div>
+                </div>
+                <button type="submit" class="btn btn-primary">Кіру</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Басты панель (авторизациядан кейін) -->
+    <div id="mainScreen" class="screen">
+        <!-- Бүйірлік мәзір (Sidebar) -->
+        <div id="sidebar" class="sidebar">
+            <div class="sidebar-header">
+                <h2>Мәзір</h2>
+                <button class="sidebar-close" id="sidebarClose" onclick="app.toggleSidebar()">×</button>
+            </div>
+            <nav class="sidebar-nav" id="sidebarNav">
+                <!-- Навигация JS арқылы толтырылады -->
+            </nav>
+            <div class="sidebar-footer">
+                <div class="sidebar-social">
+                    <a href="#" class="social-icon" title="WhatsApp">📱</a>
+                    <a href="#" class="social-icon" title="Instagram">📷</a>
+                </div>
+                <button class="btn btn-sidebar" onclick="app.loadSection('reservations'); app.toggleSidebar();">
+                    Брондау
+                </button>
+            </div>
+        </div>
+
+        <!-- Көлеңкелеу үшін Overlay -->
+        <div id="sidebarOverlay" class="sidebar-overlay" onclick="app.toggleSidebar()"></div>
+
+        <!-- Негізгі мазмұн -->
+        <div class="main-wrapper">
+            <header class="header">
+                <button class="menu-toggle" id="menuToggle" onclick="app.toggleSidebar()">☰</button>
+                <h1>Ресторан басқару жүйесі</h1>
+                <div class="user-info">
+                    <span id="currentUser"></span>
+                    <span id="currentRole"></span>
+                    <button id="logoutBtn" class="btn btn-secondary">Шығу</button>
+                </div>
+            </header>
+
+            <main class="main-content" id="mainContent">
+                <!-- Мазмұн динамикалық түрде жүктеледі -->
+            </main>
+        </div>
+    </div>
+
+    <script src="js/storage.js"></script>
+    <script src="js/app.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/orders.js"></script>
+    <script src="js/reservations.js"></script>
+    <script src="js/customers.js"></script>
+    <script src="js/payments.js"></script>
+    <script src="js/staff.js"></script>
+    <script src="js/kitchen.js"></script>
+    <script src="js/warehouse.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/delivery.js"></script>
+    <script src="js/reviewTriage.js"></script>
+    <script src="js/reviews.js"></script>
+    <script src="js/banquet.js"></script>
+    <script src="js/auth.js"></script>
+</body>
+</html>
+

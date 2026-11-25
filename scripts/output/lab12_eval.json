@@ -1,0 +1,653 @@
+{
+  "generated_at": "2026-11-25T09:41:03.452Z",
+  "eval_file": "scripts/data/review_eval.json",
+  "eval_sha256": "440653c67294030e6be19af4dd612d1048e441bf4932003018e0aa9c779ed79b",
+  "prompt_sha256": "2ba2ae0575919f6ed63a0653ae3920438db0a1483a23ae023e722dc8b6bc146e",
+  "n": 36,
+  "acceptance_rule": "accuracy >= 0.80 және complaint recall >= 0.90",
+  "baseline": {
+    "name": "кілтсөз, AI жоқ",
+    "metric": {
+      "n": 36,
+      "correct": 34,
+      "accuracy": 0.9444,
+      "macro_f1": 0.9299,
+      "complaint_recall": 0.9286,
+      "per_class": {
+        "praise": {
+          "tp": 6,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1,
+          "recall": 0.8571,
+          "f1": 0.9231
+        },
+        "complaint": {
+          "tp": 13,
+          "fp": 0,
+          "fn": 1,
+          "precision": 1,
+          "recall": 0.9286,
+          "f1": 0.963
+        },
+        "question": {
+          "tp": 10,
+          "fp": 0,
+          "fn": 0,
+          "precision": 1,
+          "recall": 1,
+          "f1": 1
+        },
+        "neutral": {
+          "tp": 5,
+          "fp": 2,
+          "fn": 0,
+          "precision": 0.7143,
+          "recall": 1,
+          "f1": 0.8333
+        }
+      }
+    },
+    "accepted": true,
+    "rows": [
+      {
+        "id": "R01",
+        "gold": "praise",
+        "pred": "praise",
+        "match": true
+      },
+      {
+        "id": "R02",
+        "gold": "praise",
+        "pred": "praise",
+        "match": true
+      },
+      {
+        "id": "R03",
+        "gold": "praise",
+        "pred": "neutral",
+        "match": false
+      },
+      {
+        "id": "R04",
+        "gold": "complaint",
+        "pred": "complaint",
+        "match": true
+      },
+      {
+        "id": "R05",
+        "gold": "complaint",
+        "pred": "neutral",
+        "match": false
+      },
+      {
+        "id": "R06",
+        "gold": "complaint",
+        "pred": "complaint",
+        "match": true
+      },
+      {
+        "id": "R07",
+        "gold": "complaint",
+        "pred": "complaint",
+        "match": true
+      },
+      {
+        "id": "R08",
+        "gold": "complaint",
+        "pred": "complaint",
+        "match": true
+      },
+      {
+        "id": "R09",
+        "gold": "complaint",
+        "pred": "complaint",
+        "match": true
+      },
+      {
+        "id": "R10",
+        "gold": "complaint",
+        "pred": "complaint",
+        "match": true
+      },
+      {
+        "id": "R11",
+        "gold": "question",
+        "pred": "question",
+        "match": true
+      },
+      {
+        "id": "R12",
+        "gold": "question",
+        "pred": "question",
+        "match": true
+      },
+      {
+        "id": "R13",
+        "gold": "question",
+        "pred": "question",
+        "match": true
+      },
+      {
+        "id": "R14",
+        "gold": "question",
+        "pred": "question",
+        "match": true
+      },
+      {
+        "id": "R15",
+        "gold": "question",
+        "pred": "question",
+        "match": true
+      },
+      {
+        "id": "R16",
+        "gold": "question",
+        "pred": "question",
+        "match": true
+      },
+      {
+        "id": "R17",
+        "gold": "neutral",
+        "pred": "neutral",
+        "match": true
+      },
+      {
+        "id": "R18",
+        "gold": "neutral",
+        "pred": "neutral",
+        "match": true
+      },
+      {
+        "id": "R19",
+        "gold": "praise",
+        "pred": "praise",
+        "match": true
+      },
+      {
+        "id": "R20",
+        "gold": "complaint",
+        "pred": "complaint",
+        "match": true
+      },
+      {
+        "id": "R21",
+        "gold": "question",
+        "pred": "question",
+        "match": true
+      },
+      {
+        "id": "R22",
+        "gold": "complaint",
+        "pred": "complaint",
+        "match": true
+      },
+      {
+        "id": "R23",
+        "gold": "praise",
+        "pred": "praise",
+        "match": true
+      },
+      {
+        "id": "R24",
+        "gold": "complaint",
+        "pred": "complaint",
+        "match": true
+      },
+      {
+        "id": "R25",
+        "gold": "question",
+        "pred": "question",
+        "match": true
+      },
+      {
+        "id": "R26",
+        "gold": "neutral",
+        "pred": "neutral",
+        "match": true
+      },
+      {
+        "id": "R27",
+        "gold": "praise",
+        "pred": "praise",
+        "match": true
+      },
+      {
+        "id": "R28",
+        "gold": "complaint",
+        "pred": "complaint",
+        "match": true
+      },
+      {
+        "id": "R29",
+        "gold": "complaint",
+        "pred": "complaint",
+        "match": true
+      },
+      {
+        "id": "R30",
+        "gold": "complaint",
+        "pred": "complaint",
+        "match": true
+      },
+      {
+        "id": "R31",
+        "gold": "question",
+        "pred": "question",
+        "match": true
+      },
+      {
+        "id": "R32",
+        "gold": "question",
+        "pred": "question",
+        "match": true
+      },
+      {
+        "id": "R33",
+        "gold": "neutral",
+        "pred": "neutral",
+        "match": true
+      },
+      {
+        "id": "R34",
+        "gold": "praise",
+        "pred": "praise",
+        "match": true
+      },
+      {
+        "id": "R35",
+        "gold": "complaint",
+        "pred": "complaint",
+        "match": true
+      },
+      {
+        "id": "R36",
+        "gold": "neutral",
+        "pred": "neutral",
+        "match": true
+      }
+    ]
+  },
+  "prompt_model": {
+    "ran": true,
+    "stack": "node-llama-cpp, CPU, gpu:false",
+    "model": "Qwen/Qwen2.5-1.5B-Instruct-GGUF qwen2.5-1.5b-instruct-q4_k_m.gguf",
+    "prompt": "scripts/review_prompt_v1.txt",
+    "temperature": 0,
+    "maxTokens": 24,
+    "metric": {
+      "n": 36,
+      "correct": 21,
+      "accuracy": 0.5833,
+      "macro_f1": 0.5128,
+      "complaint_recall": 0.7857,
+      "per_class": {
+        "praise": {
+          "tp": 1,
+          "fp": 0,
+          "fn": 6,
+          "precision": 1,
+          "recall": 0.1429,
+          "f1": 0.25
+        },
+        "complaint": {
+          "tp": 11,
+          "fp": 8,
+          "fn": 3,
+          "precision": 0.5789,
+          "recall": 0.7857,
+          "f1": 0.6667
+        },
+        "question": {
+          "tp": 6,
+          "fp": 1,
+          "fn": 4,
+          "precision": 0.8571,
+          "recall": 0.6,
+          "f1": 0.7059
+        },
+        "neutral": {
+          "tp": 3,
+          "fp": 6,
+          "fn": 2,
+          "precision": 0.3333,
+          "recall": 0.6,
+          "f1": 0.4286
+        }
+      }
+    },
+    "accepted": false,
+    "avg_output_tokens_o200k": 5.4444,
+    "latency_ms": {
+      "min": 2131,
+      "p50": 2672,
+      "max": 4910
+    },
+    "rows": [
+      {
+        "id": "R01",
+        "gold": "praise",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 4910
+      },
+      {
+        "id": "R02",
+        "gold": "praise",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2947
+      },
+      {
+        "id": "R03",
+        "gold": "praise",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2924
+      },
+      {
+        "id": "R04",
+        "gold": "complaint",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2730
+      },
+      {
+        "id": "R05",
+        "gold": "complaint",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2640
+      },
+      {
+        "id": "R06",
+        "gold": "complaint",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2752
+      },
+      {
+        "id": "R07",
+        "gold": "complaint",
+        "pred": "question",
+        "raw": "{\"class\":\"question\"}",
+        "ms": 2697
+      },
+      {
+        "id": "R08",
+        "gold": "complaint",
+        "pred": "neutral",
+        "raw": "{\"class\":\"neutral\"}",
+        "ms": 2631
+      },
+      {
+        "id": "R09",
+        "gold": "complaint",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2433
+      },
+      {
+        "id": "R10",
+        "gold": "complaint",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2777
+      },
+      {
+        "id": "R11",
+        "gold": "question",
+        "pred": "question",
+        "raw": "{\"class\":\"question\"}",
+        "ms": 2591
+      },
+      {
+        "id": "R12",
+        "gold": "question",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2614
+      },
+      {
+        "id": "R13",
+        "gold": "question",
+        "pred": "neutral",
+        "raw": "{\"class\":\"neutral\"}",
+        "ms": 2764
+      },
+      {
+        "id": "R14",
+        "gold": "question",
+        "pred": "question",
+        "raw": "{\"class\":\"question\"}",
+        "ms": 2654
+      },
+      {
+        "id": "R15",
+        "gold": "question",
+        "pred": "neutral",
+        "raw": "{\"class\":\"neutral\"}",
+        "ms": 2850
+      },
+      {
+        "id": "R16",
+        "gold": "question",
+        "pred": "question",
+        "raw": "{\"class\":\"question\"}",
+        "ms": 2879
+      },
+      {
+        "id": "R17",
+        "gold": "neutral",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2748
+      },
+      {
+        "id": "R18",
+        "gold": "neutral",
+        "pred": "neutral",
+        "raw": "{\"class\":\"neutral\"}",
+        "ms": 2725
+      },
+      {
+        "id": "R19",
+        "gold": "praise",
+        "pred": "neutral",
+        "raw": "{\"class\":\"neutral\"}",
+        "ms": 2708
+      },
+      {
+        "id": "R20",
+        "gold": "complaint",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2758
+      },
+      {
+        "id": "R21",
+        "gold": "question",
+        "pred": "question",
+        "raw": "{\"class\":\"question\"}",
+        "ms": 2569
+      },
+      {
+        "id": "R22",
+        "gold": "complaint",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2620
+      },
+      {
+        "id": "R23",
+        "gold": "praise",
+        "pred": "praise",
+        "raw": "{\"class\":\"praise\"}",
+        "ms": 2746
+      },
+      {
+        "id": "R24",
+        "gold": "complaint",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2672
+      },
+      {
+        "id": "R25",
+        "gold": "question",
+        "pred": "question",
+        "raw": "{\"class\":\"question\"}",
+        "ms": 2512
+      },
+      {
+        "id": "R26",
+        "gold": "neutral",
+        "pred": "neutral",
+        "raw": "{\"class\":\"neutral\"}",
+        "ms": 2525
+      },
+      {
+        "id": "R27",
+        "gold": "praise",
+        "pred": "neutral",
+        "raw": "{\"class\":\"neutral\"}",
+        "ms": 2680
+      },
+      {
+        "id": "R28",
+        "gold": "complaint",
+        "pred": "neutral",
+        "raw": "{\"class\":\"neutral\"}",
+        "ms": 2630
+      },
+      {
+        "id": "R29",
+        "gold": "complaint",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2738
+      },
+      {
+        "id": "R30",
+        "gold": "complaint",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2572
+      },
+      {
+        "id": "R31",
+        "gold": "question",
+        "pred": "question",
+        "raw": "{\"class\":\"question\"}",
+        "ms": 2305
+      },
+      {
+        "id": "R32",
+        "gold": "question",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2519
+      },
+      {
+        "id": "R33",
+        "gold": "neutral",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2504
+      },
+      {
+        "id": "R34",
+        "gold": "praise",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2537
+      },
+      {
+        "id": "R35",
+        "gold": "complaint",
+        "pred": "complaint",
+        "raw": "{\"class\":\"complaint\"}",
+        "ms": 2525
+      },
+      {
+        "id": "R36",
+        "gold": "neutral",
+        "pred": "neutral",
+        "raw": "neutral",
+        "ms": 2131
+      }
+    ]
+  },
+  "cost": {
+    "rates": {
+      "date": "2026-11-25",
+      "usd_kzt": 458.28,
+      "eur_kzt": 501.45,
+      "usd_source": "https://nationalbank.kz/ru/exchangerates/ezhednevnye-oficialnye-rynochnye-kursy-valyut",
+      "gpt5_mini_per_1m": {
+        "in": 0.25,
+        "out": 2,
+        "name": "gpt-5-mini"
+      },
+      "gpt4o_mini_per_1m": {
+        "in": 0.15,
+        "out": 0.6,
+        "name": "gpt-4o-mini"
+      },
+      "price_source": "https://developers.openai.com/api/docs/pricing",
+      "gpu": {
+        "name": "Hetzner GEX45",
+        "month_eur_ex_vat": 214,
+        "setup_eur_ex_vat": 209,
+        "source": "https://www.hetzner.com/dedicated-rootserver/gex45/"
+      }
+    },
+    "tokenizer": "js-tiktoken o200k_base",
+    "avg_input_tokens": 206.25,
+    "planned_output_tokens": 6,
+    "input_tokens_min": 199,
+    "input_tokens_max": 222,
+    "volume_month": 600,
+    "volume_note": "бір кофейня, күніне 20 пікір немесе жазбаша хабар, 30 күн",
+    "api": {
+      "base": {
+        "gpt5_mini": {
+          "model": "gpt-5-mini",
+          "requests": 600,
+          "usd": 0.0381,
+          "kzt": 17.4777
+        },
+        "gpt4o_mini": {
+          "model": "gpt-4o-mini",
+          "requests": 600,
+          "usd": 0.0207,
+          "kzt": 9.4967
+        }
+      },
+      "times_10": {
+        "gpt5_mini": {
+          "model": "gpt-5-mini",
+          "requests": 6000,
+          "usd": 0.3814,
+          "kzt": 174.7765
+        },
+        "gpt4o_mini": {
+          "model": "gpt-4o-mini",
+          "requests": 6000,
+          "usd": 0.2072,
+          "kzt": 94.9671
+        }
+      }
+    },
+    "self_host_gex45_kzt": {
+      "month_ex_vat": 107310.3,
+      "setup_ex_vat": 104803.05,
+      "year1_average_month": 116043.8875
+    },
+    "break_even_requests_per_month": {
+      "gpt5_mini_vs_gex45_month": 3683915,
+      "gpt4o_mini_vs_gex45_month": 6779843,
+      "gpt5_mini_vs_gex45_year1": 3983735
+    }
+  }
+}

@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Админ панель</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        body { 
+            margin: 0; 
+            padding: 20px; 
+            background: #f5f5f5; 
+        }
+        .admin-container { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+        }
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+    </style>
+</head>
+<body>
+    <div class="admin-container">
+        <div class="header">
+            <h1>Админ панель</h1>
+            <button class="btn btn-secondary" onclick="window.close()" style="margin-top: 10px;">Жабу</button>
+        </div>
+        <div id="adminContent"></div>
+    </div>
+    <script src="js/storage.js"></script>
+    <script src="js/auth.js"></script>
+    <script src="js/admin.js"></script>
+    <script>
+        // Проверяем авторизацию и загружаем админ панель
+        window.addEventListener('load', () => {
+            // Проверяем, есть ли сохраненный пользователь
+            const savedUser = sessionStorage.getItem('currentUser');
+            if (!savedUser) {
+                document.getElementById('adminContent').innerHTML = `
+                    <div class="content-section">
+                        <h2>Авторизация қажет</h2>
+                        <p>Бұл бетке кіру үшін авторизациядан өту қажет.</p>
+                        <button class="btn btn-primary" onclick="window.opener && window.opener.focus(); window.close();">Негізгі бетке оралу</button>
+                    </div>
+                `;
+                return;
+            }
+
+            // Восстанавливаем текущего пользователя
+            auth.currentUser = JSON.parse(savedUser);
+            
+            // Загружаем админ панель
+            if (typeof adminModule !== 'undefined') {
+                // Временно заменяем getElementById для adminModule
+                const originalGetElementById = document.getElementById.bind(document);
+                const adminContent = document.getElementById('adminContent');
+                
+                document.getElementById = function(id) {
+                    if (id === 'mainContent') {
+                        return adminContent;
+                    }
+                    return originalGetElementById(id);
+                };
+                
+                adminModule.render();
+                
+                // Восстанавливаем оригинальный getElementById
+                document.getElementById = originalGetElementById;
+            }
+        });
+    </script>
+</body>
+</html>
+

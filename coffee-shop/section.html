@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title id="pageTitle">Бөлім</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <style>
+        body { 
+            margin: 0; 
+            padding: 20px; 
+            background: #f5f5f5; 
+        }
+        .section-container { 
+            max-width: 1400px; 
+            margin: 0 auto; 
+        }
+        .header {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+    </style>
+</head>
+<body>
+    <div class="section-container">
+        <div class="header">
+            <h1 id="sectionTitle">Бөлім</h1>
+            <button class="btn btn-secondary" onclick="window.close()">Жабу</button>
+        </div>
+        <div id="sectionContent"></div>
+    </div>
+    <script src="js/storage.js"></script>
+    <script src="js/dashboard.js"></script>
+    <script src="js/menu.js"></script>
+    <script src="js/orders.js"></script>
+    <script src="js/reservations.js"></script>
+    <script src="js/customers.js"></script>
+    <script src="js/payments.js"></script>
+    <script src="js/staff.js"></script>
+    <script src="js/kitchen.js"></script>
+    <script src="js/warehouse.js"></script>
+    <script src="js/admin.js"></script>
+    <script src="js/events.js"></script>
+    <script src="js/delivery.js"></script>
+    <script src="js/reviews.js"></script>
+    <script src="js/banquet.js"></script>
+    <script>
+        // Создаем упрощенный объект auth для section.html
+        const auth = {
+            currentUser: null,
+            hasPermission: function(requiredRole) {
+                if (!this.currentUser) return false;
+                const roleHierarchy = {
+                    admin: 5,
+                    manager: 4,
+                    chef: 3,
+                    waiter: 2,
+                    cashier: 1
+                };
+                return roleHierarchy[this.currentUser.role] >= roleHierarchy[requiredRole];
+            },
+            showNotification: function(message, type = 'success') {
+                const notification = document.createElement('div');
+                notification.className = 'notification';
+                notification.style.background = type === 'success' ? '#28a745' : type === 'error' ? '#dc3545' : '#17a2b8';
+                notification.textContent = message;
+                document.body.appendChild(notification);
+                setTimeout(() => {
+                    notification.remove();
+                }, 3000);
+            }
+        };
+
+        // Получаем секцию из URL параметров
+        const urlParams = new URLSearchParams(window.location.search);
+        const section = urlParams.get('section') || 'dashboard';
+        
+        // Названия секций
+        const sectionNames = {
+            dashboard: 'Басты бет',
+            menu: 'Мәзір',
+            orders: 'Тапсырыстар',
+            reservations: 'Брондау',
+            customers: 'Клиенттер',
+            payments: 'Төлемдер',
+            staff: 'Персонал',
+            kitchen: 'Асхана',
+            warehouse: 'Қойма',
+            admin: 'Админ панель',
+            events: 'Оқиғалар',
+            delivery: 'Жеткізу',
+            reviews: 'Пікірлер',
+            banquet: 'Банкет залдары'
+        };
+        
+        // Устанавливаем заголовок
+        document.getElementById('sectionTitle').textContent = sectionNames[section] || 'Бөлім';
+        document.getElementById('pageTitle').textContent = sectionNames[section] || 'Бөлім';
+        
+        // Проверяем авторизацию
+        window.addEventListener('load', () => {
+            const savedUser = sessionStorage.getItem('currentUser');
+            if (!savedUser) {
+                document.getElementById('sectionContent').innerHTML = `
+                    <div class="content-section">
+                        <h2>Авторизация қажет</h2>
+                        <p>Бұл бетке кіру үшін авторизациядан өту қажет.</p>
+                        <button class="btn btn-primary" onclick="window.opener && window.opener.focus(); window.close();">Негізгі бетке оралу</button>
+                    </div>
+                `;
+                return;
+            }
+            
+            // Восстанавливаем текущего пользователя
+            auth.currentUser = JSON.parse(savedUser);
+            
+            // Загружаем секцию
+            const sectionContent = document.getElementById('sectionContent');
+            
+            // Временно заменяем getElementById для модулей
+            const originalGetElementById = document.getElementById.bind(document);
+            
+            document.getElementById = function(id) {
+                if (id === 'mainContent') {
+                    return sectionContent;
+                }
+                return originalGetElementById(id);
+            };
+            
+            // Загружаем соответствующий модуль
+            switch(section) {
+                case 'dashboard':
+                    if (typeof dashboardModule !== 'undefined') dashboardModule.render();
+                    break;
+                case 'menu':
+                    if (typeof menuModule !== 'undefined') menuModule.render();
+                    break;
+                case 'orders':
+                    if (typeof ordersModule !== 'undefined') ordersModule.render();
+                    break;
+                case 'reservations':
+                    if (typeof reservationsModule !== 'undefined') reservationsModule.render();
+                    break;
+                case 'customers':
+                    if (typeof customersModule !== 'undefined') customersModule.render();
+                    break;
+                case 'payments':
+                    if (typeof paymentsModule !== 'undefined') paymentsModule.render();
+                    break;
+                case 'staff':
+                    if (typeof staffModule !== 'undefined') staffModule.render();
+                    break;
+                case 'kitchen':
+                    if (typeof kitchenModule !== 'undefined') kitchenModule.render();
+                    break;
+                case 'warehouse':
+                    if (typeof warehouseModule !== 'undefined') warehouseModule.render();
+                    break;
+                case 'admin':
+                    if (typeof adminModule !== 'undefined') adminModule.render();
+                    break;
+                case 'events':
+                    if (typeof eventsModule !== 'undefined') eventsModule.render();
+                    break;
+                case 'delivery':
+                    if (typeof deliveryModule !== 'undefined') deliveryModule.render();
+                    break;
+                case 'reviews':
+                    if (typeof reviewsModule !== 'undefined') reviewsModule.render();
+                    break;
+                case 'banquet':
+                    if (typeof banquetModule !== 'undefined') banquetModule.render();
+                    break;
+                default:
+                    sectionContent.innerHTML = '<div class="content-section"><h2>Бөлім табылмады</h2></div>';
+            }
+            
+            // Восстанавливаем оригинальный getElementById
+            document.getElementById = originalGetElementById;
+        });
+    </script>
+</body>
+</html>
+
